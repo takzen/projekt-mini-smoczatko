@@ -50,7 +50,7 @@ def RoPE(x):
     )
     return x_rotated.flatten(-2)
 
-# --- Architektura Modelu (z artykułu, z poprawkami) ---
+# --- Architektura modelu (z artykułu, z poprawkami) ---
 class LinearAttention(nn.Module):
     def forward(self, Q, K, V):
         Qr = RoPE(Q)
@@ -121,7 +121,7 @@ class BDH_GPU(nn.Module):
             idx = torch.cat((idx, idx_next), dim=1)
         return idx
 
-# --- Przygotowanie Danych ---
+# --- Przygotowanie danych ---
 def get_data():
     url = "https://wolnelektury.pl/media/book/txt/pan-tadeusz.txt"
     try:
@@ -142,7 +142,7 @@ def get_batch(data, batch_size, block_size):
     y = torch.stack([data[i+1:i+block_size+1] for i in ix])
     return x.to(device), y.to(device)
 
-# --- Główna Część Skryptu ---
+# --- Główna część skryptu ---
 if __name__ == '__main__':
     # 1. Wczytaj i przygotuj dane
     raw_text = get_data()

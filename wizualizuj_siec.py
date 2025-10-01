@@ -18,7 +18,7 @@ MODEL_PATH = 'mini_smoczatko.pth'
 OUTPUT_IMAGE_FILE = 'analiza_wynik.png'
 
 def visualize():
-    # --- Krok 1: Wczytaj wytrenowany model ---
+    # --- Krok 1: wczytaj wytrenowany model ---
     try:
         model = BDH_GPU()
         model.load_state_dict(torch.load(MODEL_PATH, map_location=torch.device('cpu')))
@@ -29,19 +29,19 @@ def visualize():
         print("Najpierw uruchom 'mini_smoczatko.py', aby wytrenować i zapisać model.")
         return
         
-    # --- Krok 2: Wyciągnij macierz 'encoder' ---
+    # --- Krok 2: wyciągnij macierz 'encoder' ---
     encoder = model.encoder.detach().cpu().numpy()
     print("Wyciągnięto macierz 'encoder' z modelu.")
 
-    # --- Krok 3: Oblicz graf podobieństwa neuronów ---
+    # --- Krok 3: oblicz graf podobieństwa neuronów ---
     G = encoder @ encoder.T
     print(f"Obliczono macierz podobieństwa neuronów G o wymiarach: {G.shape}")
 
-    # --- Krok 4: Przygotuj dane do wizualizacji ---
+    # --- Krok 4: przygotuj dane do wizualizacji ---
     weights = G[~np.eye(G.shape[0], dtype=bool)].flatten()
     print(f"Analizowanie {len(weights)} unikalnych wag połączeń...")
     
-    # --- Krok 5: Stwórz i zapisz wykres ---
+    # --- Krok 5: stwórz i zapisz wykres ---
     plt.style.use('seaborn-v0_8-whitegrid')
     fig, ax = plt.subplots(figsize=(14, 7))
     
