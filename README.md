@@ -26,7 +26,7 @@ Model, trenowany od zera na "Panu Tadeuszu", nauczył się podstaw języka polsk
 
 Najważniejszy wynik. Histogram pokazuje rozkład siły połączeń między neuronami modelu. To jest wizualny dowód na narodziny struktury z chaosu!
 
-![Wynik analizy sieci neuronowej](images/analiza_wynik.png)
+![Wynik analizy sieci neuronowej](images/analiza_wynik.png) 
 
 **Jak to czytać?**
 -   **Wysoki szczyt w zerze:** większość z milionów możliwych połączeń między neuronami jest bardzo słaba. Oznacza to, że sieć jest **rzadka i wydajna**, nie marnuje energii na niepotrzebne połączenia.
