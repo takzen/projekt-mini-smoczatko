@@ -4,7 +4,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.8.0-orange.svg)
 ![License](https://img.shields.io/badge/License-MIT-green.svg)
 
-Ten projekt to praktyczny eksperyment naukowy, który pozwala **zajrzeć do "mózgu" sztucznej inteligencji i zobaczyć na własne oczy zjawisko emergencji**. Implementujemy tu architekturę AI inspirowaną hipotetycznym artykułem "The Dragon Hatchling", trenujemy ją od zera, a na końcu wizualizujemy, jak z chaosu losowych wag rodzi się złożona, nielosowa struktura połączeń neuronowych.
+Ten projekt to praktyczny eksperyment naukowy, który pozwala **zajrzeć do "mózgu" sztucznej inteligencji i zobaczyć na własne oczy zjawisko emergencji**. Implementujemy tu architekturę AI inspirowaną hipotetycznym artykułem "The Dragon Hatchling" https://arxiv.org/abs/2509.26507, trenujemy ją od zera, a na końcu wizualizujemy, jak z chaosu losowych wag rodzi się złożona, nielosowa struktura połączeń neuronowych.
 
 ## Kluczowa idea: emergencja
 
@@ -29,12 +29,12 @@ Najważniejszy wynik. Histogram pokazuje rozkład siły połączeń między neur
 ![Wynik analizy sieci neuronowej](images/analiza_wynik.png)
 
 **Jak to czytać?**
--   **Wysoki szczyt w zerze:** Większość z milionów możliwych połączeń między neuronami jest bardzo słaba. Oznacza to, że sieć jest **rzadka i wydajna**, nie marnuje energii na niepotrzebne połączenia.
--   **"Ciężkie ogony" (heavy tails):** Zauważ, że wartości daleko od zera (zwłaszcza po prawej) występują znacznie częściej, niż powinny w losowym szumie. To są te nieliczne, ale **niezwykle silne połączenia**, które model sam wytworzył w trakcie nauki.
+-   **Wysoki szczyt w zerze:** większość z milionów możliwych połączeń między neuronami jest bardzo słaba. Oznacza to, że sieć jest **rzadka i wydajna**, nie marnuje energii na niepotrzebne połączenia.
+-   **"Ciężkie ogony" (heavy tails):** zauważ, że wartości daleko od zera (zwłaszcza po prawej) występują znacznie częściej, niż powinny w losowym szumie. To są te nieliczne, ale **niezwykle silne połączenia**, które model sam wytworzył w trakcie nauki.
 
 ## Jak uruchomić eksperyment?
 
-Możesz odtworzyć cały eksperyment na własnym komputerze, używając `uv` - nowoczesnego i szybkiego menedżera pakietów dla Pythona. (Zalecana karta graficzna NVIDIA).
+Możesz odtworzyć cały eksperyment na własnym komputerze, używając `uv` - nowoczesnego i szybkiego menedżera pakietów dla Pythona. Zalecana karta graficzna NVIDIA.
 
 **1. Sklonuj repozytorium:**
 ```bash
@@ -61,7 +61,7 @@ uv pip install -r requirements.txt
 ```
 
 **4. Uruchom trening:**
-Skrypt automatycznie pobierze dane ("Pan Tadeusz") i rozpocznie trening.
+skrypt automatycznie pobierze dane ("Pan Tadeusz") i rozpocznie trening.
 ```bash
 python mini_smoczatko.py
 ```
