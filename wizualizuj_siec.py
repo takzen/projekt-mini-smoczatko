@@ -11,7 +11,7 @@ import sys
 try:
     from mini_smoczatko import BDH_GPU, D, H, N
 except ImportError:
-    print("Błąd: Upewnij się, że plik 'mini_smoczatko.py' jest w tym samym folderze.")
+    print("Błąd: upewnij się, że plik 'mini_smoczatko.py' jest w tym samym folderze.")
     sys.exit(1)
 
 MODEL_PATH = 'mini_smoczatko.pth'
@@ -25,7 +25,7 @@ def visualize():
         model.eval()
         print(f"Pomyślnie wczytano model z pliku '{MODEL_PATH}'.")
     except FileNotFoundError:
-        print(f"Błąd: Nie znaleziono pliku modelu '{MODEL_PATH}'.")
+        print(f"Błąd: nie znaleziono pliku modelu '{MODEL_PATH}'.")
         print("Najpierw uruchom 'mini_smoczatko.py', aby wytrenować i zapisać model.")
         return
         
@@ -46,9 +46,9 @@ def visualize():
     fig, ax = plt.subplots(figsize=(14, 7))
     
     ax.hist(weights, bins=200, log=True, color='purple', alpha=0.75, label='Częstotliwość wag')
-    ax.set_title('Dystrybucja Podobieństw w Sieci Neuronowej (Skala Logarytmiczna)', fontsize=16, fontweight='bold')
-    ax.set_xlabel('Wartość Podobieństwa (Iloczyn Skalarny)', fontsize=12)
-    ax.set_ylabel('Liczba Wystąpień (w skali log)', fontsize=12)
+    ax.set_title('Dystrybucja podobieństw w sieci neuronowej (skala logarytmiczna)', fontsize=16, fontweight='bold')
+    ax.set_xlabel('Wartość podobieństwa (iloczyn skalarny)', fontsize=12)
+    ax.set_ylabel('Liczba wystąpień (w skali log)', fontsize=12)
     ax.axvline(0, color='red', linestyle='--', linewidth=1.5, label='Zero (brak korelacji)')
     
     mean_weight = np.mean(weights)
