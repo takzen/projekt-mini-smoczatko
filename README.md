@@ -38,8 +38,8 @@ Możesz odtworzyć cały eksperyment na własnym komputerze, używając `uv` - n
 
 **1. Sklonuj repozytorium:**
 ```bash
-git clone https://github.com/takzen/Projekt-Mini-Smoczatko.git
-cd Projekt-Mini-Smoczatko
+git clone https://github.com/takzen/projekt-mini-smoczatko.git
+cd projekt-mini-smoczatko
 ```
 
 **2. Zainstaluj `uv` (jeśli jeszcze go nie masz):**
